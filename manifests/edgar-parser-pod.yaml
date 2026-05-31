@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: edgar-parser-pod
+  labels:
+    app: edgar-parser
+spec:
+  restartPolicy: Always
+  containers:
+    - name: parser
+      image: python:3.12-slim
+      command: ["sleep", "infinity"]
