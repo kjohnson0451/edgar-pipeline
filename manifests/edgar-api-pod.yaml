@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: edgar-api-pod
+  labels:
+    app: edgar-api
+spec:
+  restartPolicy: Always
+  containers:
+    - name: api
+      image: python:3.12-slim
+      command: ["sleep", "infinity"]
