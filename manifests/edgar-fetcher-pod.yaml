@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: edgar-fetcher-pod
+  labels:
+    app: edgar-fetcher
+spec:
+  restartPolicy: Always
+  containers:
+    - name: fetcher
+      image: python:3.12-slim
+      command: ["sleep", "infinity"]
