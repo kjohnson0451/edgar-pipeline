@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: edgar-store-pod
+  labels:
+    app: edgar-store
+spec:
+  restartPolicy: Always
+  containers:
+    - name: store
+      image: postgres:16
