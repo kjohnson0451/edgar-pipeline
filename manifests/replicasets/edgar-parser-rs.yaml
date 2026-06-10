@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: edgar-parser-rs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: edgar-parser
+  template:
+    metadata:
+      labels:
+        app: edgar-parser
+    spec:
+      containers:
+        - name: parser
+          image: python:3.12-slim
+          command: ["sleep", "infinity"]
