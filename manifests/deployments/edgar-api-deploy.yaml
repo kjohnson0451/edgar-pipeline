@@ -20,17 +20,3 @@ spec:
             - containerPort: 8000
               name: api-port
               protocol: TCP
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: edgar-api-svc
-spec:
-  type: LoadBalancer
-  ports:
-    - protocol: TCP
-      port: 8000
-      targetPort: api-port
-  selector:
-    app: edgar-api
