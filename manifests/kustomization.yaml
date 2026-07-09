@@ -8,3 +8,4 @@ resources:
   - services/edgar-api-svc.yaml
   - services/edgar-parser-svc.yaml
   - services/edgar-source-svc.yaml
+  - namespaces/edgar-ns.yaml
