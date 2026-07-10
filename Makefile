@@ -1,10 +1,13 @@
 cluster-create:
 	kind create cluster --name edgar-pipeline --config kind-cluster.yaml
 
+set-context:
+	kubectl config set-context --current --namespace=edgar-ns
+
 cluster-delete:
 	kind delete cluster --name edgar-pipeline
 
-apply:
+apply: set-context
 	kubectl apply -k manifests/
 
 delete:
