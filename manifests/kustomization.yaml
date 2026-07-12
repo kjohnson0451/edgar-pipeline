@@ -5,7 +5,9 @@ resources:
   - deployments/edgar-fetcher-deploy.yaml
   - deployments/edgar-parser-deploy.yaml
   - deployments/edgar-api-deploy.yaml
+  - deployments/edgar-summarizer-deploy.yaml
   - services/edgar-api-svc.yaml
   - services/edgar-parser-svc.yaml
   - services/edgar-source-svc.yaml
+  - services/edgar-summarizer-svc.yaml
   - namespaces/edgar-ns.yaml

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: edgar-summarizer-deploy
+  namespace: edgar-ns
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: edgar-summarizer
+  template:
+    metadata:
+      labels:
+        app: edgar-summarizer
+    spec:
+      containers:
+        - name: summarizer
+          image: python:3.12-slim
+          command: ["sleep", "infinity"]
+          ports:
+            - containerPort: 8000
+              name: summarizer-port
+              protocol: TCP
