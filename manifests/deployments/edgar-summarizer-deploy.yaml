@@ -21,3 +21,9 @@ spec:
             - containerPort: 8000
               name: summarizer-port
               protocol: TCP
+          env:
+            - name: AI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: edgar-summarizer-secret
+                  key: AI_API_KEY
