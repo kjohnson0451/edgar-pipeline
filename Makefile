@@ -1,3 +1,5 @@
+.PHONY: cluster-create set-context cluster-delete namespace apply delete secrets hooks
+
 cluster-create:
 	kind create cluster --name edgar-pipeline --config kind-cluster.yaml
 
@@ -22,7 +24,6 @@ secrets:
 		--from-env-file=secrets.env \
 		--dry-run=client -o yaml | kubectl apply -f -
 
-.PHONY: hooks
 hooks:
 	pip install pre-commit --break-system-packages
 	pre-commit install --install-hooks
