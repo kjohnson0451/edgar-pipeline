@@ -1,0 +1,14 @@
+name: validate-manifests
+on: [pull_request, push]
+
+jobs:
+  validate-manifests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Install kubeconform
+        run: |
+          curl -fsSL https://github.com/yannh/kubeconform/releases/download/v0.7.0/kubeconform-linux-amd64.tar.gz \
+            | sudo tar xz -C /usr/local/bin kubeconform
+      - name: Render with kustomize and validate
+        run: kubectl kustomize manifests/ | kubeconform -strict -summary -kubernetes-version 1.35.0
